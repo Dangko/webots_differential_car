@@ -1,0 +1,8 @@
+prefix=/home/dango/dango_file/software/webots/web_con_ws/devel
+
+Name: voxel_grid
+Description: Description of voxel_grid
+Version: 1.16.7
+Cflags: -I/home/dango/dango_file/software/webots/web_con_ws/src/navigation/voxel_grid/include
+Libs: -L${prefix}/lib -lvoxel_grid
+Requires: roscpp

@@ -1,0 +1,5 @@
+    <launch>
+    <include file="$(find gmapping)/launch/gmapping.launch"/>
+    <!—— 启动rviz ——>
+    </launch>
+

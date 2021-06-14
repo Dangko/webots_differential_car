@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/dango/dango_file/software/webots/web_con_ws/src/web_control/cmake-build-debug/devel/setup.sh

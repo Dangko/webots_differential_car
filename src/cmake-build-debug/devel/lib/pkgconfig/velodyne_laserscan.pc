@@ -1,0 +1,8 @@
+prefix=/home/dango/dango_file/software/webots/web_con_ws/src/cmake-build-debug/devel
+
+Name: velodyne_laserscan
+Description: Description of velodyne_laserscan
+Version: 1.5.2
+Cflags: -I/home/dango/dango_file/software/webots/web_con_ws/src/cmake-build-debug/devel/include
+Libs: -L${prefix}/lib 
+Requires: sensor_msgs

@@ -1,0 +1,65 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/dango/dango_file/software/webots/web_con_ws/src/web_control/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_477d7/fast && /usr/bin/make  -f CMakeFiles/cmTC_477d7.dir/build.make CMakeFiles/cmTC_477d7.dir/build
+make[1]: 进入目录“/home/dango/dango_file/software/webots/web_con_ws/src/web_control/cmake-build-debug/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_477d7.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_477d7.dir/src.c.o   -c /home/dango/dango_file/software/webots/web_con_ws/src/web_control/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_477d7
+/home/dango/dango_file/software/clion/CLion-2020.2.4/clion-2020.2.4/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_477d7.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_477d7.dir/src.c.o  -o cmTC_477d7 
+CMakeFiles/cmTC_477d7.dir/src.c.o：在函数‘main’中：
+src.c:(.text+0x3e)：对‘pthread_create’未定义的引用
+src.c:(.text+0x4a)：对‘pthread_detach’未定义的引用
+src.c:(.text+0x56)：对‘pthread_cancel’未定义的引用
+src.c:(.text+0x67)：对‘pthread_join’未定义的引用
+src.c:(.text+0x7b)：对‘pthread_atfork’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_477d7.dir/build.make:106: recipe for target 'cmTC_477d7' failed
+make[1]: *** [cmTC_477d7] Error 1
+make[1]: 离开目录“/home/dango/dango_file/software/webots/web_con_ws/src/web_control/cmake-build-debug/CMakeFiles/CMakeTmp”
+Makefile:141: recipe for target 'cmTC_477d7/fast' failed
+make: *** [cmTC_477d7/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/dango/dango_file/software/webots/web_con_ws/src/web_control/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_561e2/fast && /usr/bin/make  -f CMakeFiles/cmTC_561e2.dir/build.make CMakeFiles/cmTC_561e2.dir/build
+make[1]: 进入目录“/home/dango/dango_file/software/webots/web_con_ws/src/web_control/cmake-build-debug/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_561e2.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_561e2.dir/CheckFunctionExists.c.o   -c /home/dango/dango_file/software/clion/CLion-2020.2.4/clion-2020.2.4/bin/cmake/linux/share/cmake-3.17/Modules/CheckFunctionExists.c
+Linking C executable cmTC_561e2
+/home/dango/dango_file/software/clion/CLion-2020.2.4/clion-2020.2.4/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_561e2.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_561e2.dir/CheckFunctionExists.c.o  -o cmTC_561e2  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_561e2.dir/build.make:106: recipe for target 'cmTC_561e2' failed
+make[1]: *** [cmTC_561e2] Error 1
+make[1]: 离开目录“/home/dango/dango_file/software/webots/web_con_ws/src/web_control/cmake-build-debug/CMakeFiles/CMakeTmp”
+Makefile:141: recipe for target 'cmTC_561e2/fast' failed
+make: *** [cmTC_561e2/fast] Error 2
+
+
+
